@@ -12,6 +12,15 @@ int check_trapezoid(int a, int b, int c, int d, int h) {
     return 0;
 }
 
+// Проверка данных для прямоугольника
+int check_rectangle(int a, int b) {
+    if (a <= 0 || b <= 0) {
+        cout << "Error, digit less than zero. Retry again\n";
+        return 1;
+    }
+    return 0;
+}
+
 // Функция для расчёта параметров трапеции
 void calculate_trapezoid() {
     int leftside, topbase, rightside, bottombase, height;
@@ -41,9 +50,32 @@ void calculate_trapezoid() {
     cout << "Midline length: " << midline << endl;
 }
 
+// Функция для расчёта параметров прямоугольника
+void calculate_rectangle() {
+    int length, width;
+
+    // Ввод данных с проверкой
+    do {
+        cout << "Length rectangle: ";
+        cin >> length;
+        cout << "Width rectangle: ";
+        cin >> width;
+    } while (check_rectangle(length, width));
+
+    // Вычисления
+    int perimeter = 2 * (length + width);
+    int square = length * width;
+    double diagonal = sqrt(pow(length, 2) + pow(width, 2));
+
+    // Вывод результатов
+    cout << "Perimeter: " << perimeter << endl;
+    cout << "Square: " << square << endl;
+    cout << "Long diagonal: " << diagonal << endl;
+}
+
 int main() {
     int choice;
-
+    
     // Выбор фигуры
     cout << "Choose a figure to calculate:\n";
     cout << "1 - Trapezoid\n";
@@ -53,10 +85,11 @@ int main() {
 
     if (choice == 1) {
         calculate_trapezoid();
+    } else if (choice == 2) {
+        calculate_rectangle();
+    } else {
+        cout << "Invalid choice. Exiting...\n";
     }
 
     return 0;
 }
-
-
-
