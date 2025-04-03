@@ -26,13 +26,13 @@
 2.  Скомпилируйте проект с помощью вашего компилятора C++ (например, g++):
 
     ```bash
-    g++ main.cpp rectangle.cpp triangle.cpp  circle.cpp -o geometry
+    g++ main3.cpp -o program
     ```
 
 3.  Запустите исполняемый файл:
 
     ```bash
-    ./geometry
+    ./program
     ```
 
 ## Структура проекта
