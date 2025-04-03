@@ -48,9 +48,7 @@ geometry/
 └── README.md
 
 
-* `main.cpp`: Основной файл программы.
-* `rectangle.cpp`, `trapezoid.cpp`, , `circle.cpp`: Файлы реализации классов.
-* `rectangle.h`, `trapezoid.h`, , `circle.h`: Заголовочные файлы классов.
+* `main3.cpp`: Основной файл программы.
 * `README.md`: Этот файл.
 
 ## Авторы
