@@ -37,17 +37,6 @@
 
 ## Структура проекта
 
-geometry/
-├── main.cpp
-├── rectangle.cpp
-├── rectangle.h
-├── trapezoid.cpp
-├── trapezoid.h
-├── circle.cpp
-├── circle.h
-└── README.md
-
-
 * `main3.cpp`: Основной файл программы.
 * `README.md`: Этот файл.
 
