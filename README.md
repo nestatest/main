@@ -20,7 +20,7 @@
 1.  Клонируйте репозиторий:
 
     ```bash
-    git clone https://github.com/rozetkaimg/prog_lab_one/tree/main
+    git clone https://github.com/nestatest/main/tree/main
     ```
 
 2.  Скомпилируйте проект с помощью вашего компилятора C++ (например, g++):
