@@ -64,7 +64,7 @@ void calculate_rectangle() {
 
     // Вычисления
     int perimeter = 2 * (length + width);
-    int square = length * width;
+    int square = length * width * 2;
     double diagonal = sqrt(pow(length, 2) + pow(width, 2));
 
     // Вывод результатов
