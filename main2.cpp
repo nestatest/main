@@ -15,8 +15,6 @@ int check_trapezoid(int topbase, int bottombase, int leftside, int rightside, in
         cout << "Error: trapezoid cannot exist. Side must be longer than height.\n";
         return 1;
     }
-<<<<<<< HEAD
-=======
     
     // Проверка: сумма любых трёх сторон должна быть больше четвёртой
     if ((leftside + topbase + rightside) <= bottombase) {
@@ -35,7 +33,6 @@ int check_trapezoid(int topbase, int bottombase, int leftside, int rightside, in
         cout << "Error\n";
         return 1;
     }
->>>>>>> kostya
 
     return 0;
 }
