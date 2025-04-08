@@ -1,14 +1,40 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
-// Проверка данных для трапеции
-int check_trapezoid(int a, int b, int c, int d, int h) {
-    if (a <= 0 || b <= 0 || c <= 0 || d <= 0 || h <= 0) {
-        cout << "Error, digit less than zero. Retry again\n";
+// Проверка корректности данных для трапеции
+int check_trapezoid(int topbase, int bottombase, int leftside, int rightside, int height) {
+    // Проверка на положительные значения
+    if (topbase <= 0  bottombase <= 0  leftside <= 0  rightside <= 0  height <= 0) {
+        cout << "Errorx   x.\n";
         return 1;
     }
+    
+    // Проверка, что боковые стороны длиннее высоты (простейшая геометрическая проверка)
+    if (leftside <= height || rightside <= height) {
+        cout << "Error.\n";
+        return 1;
+    }
+
+    // Проверка: сумма любых трёх сторон должна быть больше четвёртой
+    if ((leftside + topbase + rightside) <= bottombase) {
+        cout << "Error.\n";
+        return 1;
+    }
+    if ((leftside + bottombase + rightside) <= topbase) {
+        cout << "Error.\n";
+        return 1;
+    }
+    if ((topbase + bottombase + leftside) <= rightside) {
+        cout << "Error.\n";
+        return 1;
+    }
+    if ((topbase + bottombase + rightside) <= leftside) {
+        cout << "Error.\n";
+        return 1;
+    }
+
     return 0;
 }
 
@@ -16,7 +42,6 @@ int check_trapezoid(int a, int b, int c, int d, int h) {
 void calculate_trapezoid() {
     int leftside, topbase, rightside, bottombase, height;
 
-    // Ввод данных с проверкой
     do {
         cout << "Left side: ";
         cin >> leftside;
@@ -28,14 +53,12 @@ void calculate_trapezoid() {
         cin >> bottombase;
         cout << "Height: ";
         cin >> height;
-    } while (check_trapezoid(leftside, topbase, rightside, bottombase, height));
+    } while (check_trapezoid(topbase, bottombase, leftside, rightside, height));
 
-    // Вычисления
     int perimeter = leftside + topbase + rightside + bottombase;
     double square = ((topbase + bottombase) / 2.0) * height;
     double midline = (topbase + bottombase) / 2.0;
 
-    // Вывод результатов
     cout << "Perimeter: " << perimeter << endl;
     cout << "Square: " << square << endl;
     cout << "Midline length: " << midline << endl;
