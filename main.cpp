@@ -3,41 +3,42 @@
 
 using namespace std;
 
-// Проверка корректности данных
+// Проверка корректности данных для трапеции
 int check_trapezoid(int topbase, int bottombase, int leftside, int rightside, int height) {
+    // Проверка на положительные значения
     if (topbase <= 0 || bottombase <= 0 || leftside <= 0 || rightside <= 0 || height <= 0) {
-        cout << "Error: all values must be greater than 0.\n";
-        return 1;
-    }
-
-    // Проверка: боковые стороны должны быть длиннее высоты
-    if (leftside <= height || rightside <= height) {
-        cout << "Error: trapezoid cannot exist. Side must be longer than height.\n";
+        cout << "Error.\n";
         return 1;
     }
     
+    // Проверка, что боковые стороны длиннее высоты (простейшая геометрическая проверка)
+    if (leftside <= height || rightside <= height) {
+        cout << "Error.\n";
+        return 1;
+    }
+
     // Проверка: сумма любых трёх сторон должна быть больше четвёртой
     if ((leftside + topbase + rightside) <= bottombase) {
-        cout << "Error\n";
+        cout << "Error.\n";
         return 1;
     }
     if ((leftside + bottombase + rightside) <= topbase) {
-        cout << "Error\n";
+        cout << "Error.\n";
         return 1;
     }
     if ((topbase + bottombase + leftside) <= rightside) {
-        cout << "Error\n";
+        cout << "Error.\n";
         return 1;
     }
     if ((topbase + bottombase + rightside) <= leftside) {
-        cout << "Error\n";
+        cout << "Error.\n";
         return 1;
     }
 
     return 0;
 }
 
-// Расчёт параметров трапеции
+// Функция для расчёта параметров трапеции
 void calculate_trapezoid() {
     int leftside, topbase, rightside, bottombase, height;
 
@@ -67,3 +68,6 @@ int main() {
     calculate_trapezoid();
     return 0;
 }
+1
+
+
