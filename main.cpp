@@ -6,8 +6,8 @@ using namespace std;
 // Проверка корректности данных для трапеции
 int check_trapezoid(int topbase, int bottombase, int leftside, int rightside, int height) {
     // Проверка на положительные значения
-    if (topbase <= 0  bottombase <= 0  leftside <= 0  rightside <= 0  height <= 0) {
-        cout << "Errorx   x.\n";
+    if (topbase <= 0 || bottombase <= 0 || leftside <= 0 || rightside <= 0 || height <= 0) {
+        cout << "Error.\n";
         return 1;
     }
     
@@ -68,4 +68,6 @@ int main() {
     calculate_trapezoid();
     return 0;
 }
+1
+
 
